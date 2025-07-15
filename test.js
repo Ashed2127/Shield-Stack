@@ -1,5 +1,5 @@
 import express from 'express';
-import { safe } from './express-chr.js'; // or from your package name
+import { safe } from './shield-stack.js'; // or from your package name
 
 const app = express();
 
