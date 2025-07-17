@@ -1,10 +1,10 @@
 import express from 'express';
-import { safe } from './shield-stack/shield-stack.js'; // or from your package name
+import shieldStack from './shield-stack/shield-stack.js'; // or from your package name
   
   const app = express();
  
   // Apply security middleware with custom rate limiting
-  /*app.use(safe({
+  /*app.use(shieldStack({
     rateLimit: {
       windowMs: 15 * 60 * 1000, // 15 minutes
       max: 5, // Limit each IP to 5 requests per window
@@ -13,7 +13,7 @@ import { safe } from './shield-stack/shield-stack.js'; // or from your package n
    urlencoded: {extended:true}
   })*/
  
-  app.use(safe({
+  app.use(shieldStack({
          rateLimit:{
           windowMs: 60*1000,
           max: 3,
