@@ -1,5 +1,6 @@
 import express from 'express';
 import shieldStack from './shield-stack/shield-stack.js';
+import "dotenv/config";
 
 const app = express();
 
@@ -29,9 +30,11 @@ app.use((req, res, next) => {
   }
 }));*/
 
-app.use(shieldStack({
+/*app.use(shieldStack({
   rateLimit: false
-})); 
+})); */
+
+app.use(shieldStack()); 
 
 // ===== [3] Test Route =====
 app.post('/submit', (req, res) => {
@@ -50,4 +53,7 @@ app.post('/submit', (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+const port = process.env.PORT;
+
+app.listen(port, () => console.log(`Server running on ${port}`));
+  

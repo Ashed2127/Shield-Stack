@@ -1,0 +1,6 @@
+for i in {1..10}; do
+  curl -X POST http://localhost:5000/submit \
+    -H "Content-Type: application/json" \
+    -d "{\"username\":\"user$i\", \"password\":\"testpass$i\"}" \
+    -w "Request $i: HTTP %{http_code} | Time: %{time_total}s\n"
+done
