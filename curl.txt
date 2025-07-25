@@ -4,3 +4,13 @@ for i in {1..10}; do
     -d "{\"username\":\"user$i\", \"password\":\"testpass$i\"}" \
     -w "Request $i: HTTP %{http_code} | Time: %{time_total}s\n"
 done
+
+
+
+
+
+# Basic POST test without CSRF headers
+curl -X POST http://localhost:5000/submit \
+  -H "Content-Type: application/json" \
+  -d '{"username":"test","password":"secret123"}' \
+  -w "\nStatus: %{http_code} | Time: %{time_total}s\n"
