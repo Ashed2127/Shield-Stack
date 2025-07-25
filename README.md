@@ -1,3 +1,3 @@
 
 # Shield-Stack
- ## for easy setup.
+ ## for easy setup, for beginners.
