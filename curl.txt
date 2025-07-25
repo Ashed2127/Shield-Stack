@@ -3,18 +3,13 @@ for i in {1..10}; do
     -H "Content-Type: application/json" \
     -d "{\"username\":\"user$i\", \"password\":\"testpass$i\"}" \
     -w "Request $i: HTTP %{http_code} | Time: %{time_total}s\n"
-done
+done 
 
-
-
-i=1
-while (true) do
-  curl -X POST http://localhost:5000/submit \
-     -H "Content-Type: application/json" \
-     -d "{\"username\":\"user$i\", \"password\":\"testpass$i\"}" \
-     -w "Request $i: HTTP %{http_code} | Time: %{time_total}s\n"
-  ((i++))
-done
+while (true) do   curl -X POST http://localhost:5000/submit
+  -H "Content-Type: application/json"     
+  -d "{\"username\":\"user$i\", \"password\":\"testpass$i\"}"  
+  -w Request $i: HTTP %{http_code} | Time: %{time_total}s";
+    done
 
 # Basic POST test without CSRF headers
 curl -X POST http://localhost:5000/submit \
