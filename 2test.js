@@ -30,11 +30,11 @@ app.use((req, res, next) => {
   }
 }));*/
 
-/*app.use(shieldStack({
-  rateLimit: false
-})); */
+app.use(shieldStack({
+  rateLimit: true
+})); 
 
-app.use(shieldStack()); 
+//app.use(shieldStack()); 
 
 // ===== [3] Test Route =====
 app.post('/submit', (req, res) => {
