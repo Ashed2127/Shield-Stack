@@ -1,24 +1,41 @@
 {
-  "name": "mylibtest",
+  "name": "shield-stack",
   "version": "1.0.0",
-  "description": "",
-  "main": "mylibtest.js",
+  "description": "Comprehensive security middleware for Express.js - easy setup for beginners with sensible defaults",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./sanitize": "./shield-stack/shield-stack-sanitize.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "security",
+    "middleware",
+    "helmet",
+    "cors",
+    "rate-limiting",
+    "xss",
+    "sanitization",
+    "security-headers"
+  ],
+  "author": "Ashebir Diriba",
   "license": "ISC",
-  "type": "module",
+  "files": [
+    "index.js",
+    "shield-stack",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "cors": "^2.8.5",
-    "csurf": "^1.11.0",
-    "dotenv": "^17.2.1",
+    "dompurify": "^3.1.7",
     "express": "^5.1.0",
     "express-rate-limit": "^7.5.1",
-    "express-sanitizer": "^1.0.6",
-    "express-validator": "^7.2.1",
     "helmet": "^8.1.0",
-    "hpp": "^0.2.3"
+    "jsdom": "^25.0.1"
   }
 }
