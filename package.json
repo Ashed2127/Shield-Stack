@@ -1,5 +1,5 @@
 {
-  "name": "shield-stack",
+  "name": "@neuralpush/shield-stack",
   "version": "1.0.0",
   "description": "Comprehensive security middleware for Express.js - easy setup for beginners with sensible defaults",
   "main": "index.js",
